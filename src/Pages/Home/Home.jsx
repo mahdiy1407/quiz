@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     const [questionPage, setQuestionPage] = useState(0)
     const [complate, setComplate] = useState(false)
+    const [result, setResult] = useState(true)
     const [trueAnswer, setTrueAnswer] = useState(0)
 
     function nextQuestion(isTrue) {
@@ -20,7 +21,9 @@ function Home() {
     }
 
     function goBack() {
-        localStorage.setItem('resut', JSON.stringify({trueAnswer: trueAnswer}))
+        localStorage.setItem('result', JSON.stringify(trueAnswer))
+        console.log(localStorage.getItem('result'))
+        setResult(false)
     }
 
     return (
@@ -33,7 +36,7 @@ function Home() {
                             <h2 className='question-title'>True Answers</h2>
                             <h2 className='conclution__true-answer question-title'>{trueAnswer}</h2>
                         </div>
-                        <h3>History {JSON.parse(localStorage.getItem('resut')).trueAnswer}</h3>
+                        <h3>History {result ? localStorage.getItem('result') : null}</h3>
                         <Link onClick={goBack} className='go-home-link answer-btn' to='/'>Go Home</Link>
                     </div>     
                 </div>
