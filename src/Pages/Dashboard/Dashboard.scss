@@ -1,0 +1,35 @@
+.trueAnswer {
+    background-color: #00f;
+}
+.falseAnswer {
+    background-color: #f00;
+}
+.dash_question-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px;
+}
+.dash_question-item {
+    width: 200px;
+    margin: 0 auto;
+}
+.dash_question-title {
+    font-size: 30px;
+    margin: 20px 0;
+}
+.dash_answer {
+    width: 168px;
+    border: 1px solid rgb(0, 3, 194);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 5px 0;
+}
+@media only screen and (max-width: 600px) {
+    .dash_question-title {
+        font-size: 20px;
+    }
+    .dash_answer {
+        width: 168px;
+        padding: 5px 10px;
+    }
+}
